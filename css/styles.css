@@ -1,0 +1,12 @@
+.fotoPc {
+    height: 300px;
+    width: 300px;
+}
+
+ul.listaItems {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-self: center;
+}
