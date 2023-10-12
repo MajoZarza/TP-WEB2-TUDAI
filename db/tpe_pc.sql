@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2023 a las 01:35:34
+-- Tiempo de generación: 11-10-2023 a las 23:03:51
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -77,7 +77,26 @@ INSERT INTO `pc` (`id`, `id_categoria`, `nombre`, `procesador`, `grafica`, `moth
 (9, 2, 'Hyper Havoc', 'Intel Core i5-11600K', 'AMD Radeon RX 6700 XT', 'ATX Z590', 'SSD NVMe de 1 TB\r\n', 16, 'https://trulustore.cl/wp-content/uploads/2023/02/Pcblack3x.png'),
 (10, 1, 'Cosmic Cascade', 'Intel Core i9-11900K', 'NVIDIA Quadro RTX 5000', 'ATX Z590', 'SSD NVMe de 2 TB + SSD SATA de 4 TB', 64, 'https://store974.com/cdn/shop/products/Pink2-188377.jpg?v=1657771776'),
 (11, 1, 'Firestorm Fury', 'AMD Ryzen 9 5950X', 'NVIDIA GeForce RTX 3090', 'ATX X570', 'SSD NVMe de 2 TB', 32, 'https://intercompras.com/images/product/XTREME_PC_GAMING_XTMSIR932GB54080W.jpg'),
-(12, 1, 'Phoenix Phenom', 'Intel Core i9-12900K', 'NVIDIA Quadro GV100\r\n', 'ATX Z690', 'SSD NVMe de 2 TB (x2) en RAID 0', 64, 'https://falabella.scene7.com/is/image/Falabella/8062189_1?wid=800&hei=800&qlt=70');
+(12, 1, 'Phoenix Phenom', 'Intel Core i9-12900K', 'NVIDIA Quadro GV100\r\n', 'ATX Z690', 'SSD NVMe de 2 TB', 64, 'https://falabella.scene7.com/is/image/Falabella/8062189_1?wid=800&hei=800&qlt=70');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(25) NOT NULL,
+  `contraseña` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `contraseña`) VALUES
+(1, 'webadmin', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -97,6 +116,12 @@ ALTER TABLE `pc`
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -111,6 +136,12 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `pc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

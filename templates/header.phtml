@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--La direccion esta configurada en base al archivo router-->
-    <base href="http://localhost/tpe_pc/"/>
+    <base href="<?= BASE_URL ?>"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 <body>
-    <header></header>
+    <header>
+        <ul class="nav">
+            <li><a href="http://localhost/tpe_pc/">Inicio</a></li>
+            <?php if($this->isAdmin) : ?>
+                <li>hola</li>
+            <?php else : ?>
+                <li><a href="login">Login</a></li>
+            <?php endif;  ?>
+        </ul>
+    </header>

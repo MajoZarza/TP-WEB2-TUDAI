@@ -9,7 +9,7 @@ class itemController {
     private $view;
     private $id;
 
-    public function __construct($id) {
+    function __construct($id) {
         $this->model = new itemModel();
         $this->view = new itemView();
         $this->id = $id;

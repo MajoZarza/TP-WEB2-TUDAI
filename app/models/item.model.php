@@ -4,7 +4,7 @@ class itemModel {
 
     private $db;
 
-    public function __construct() {
+    function __construct() {
         $this->db = new PDO('mysql:host=localhost;dbname=tpe_pc;charset=utf8', 'root', '');
     }
 

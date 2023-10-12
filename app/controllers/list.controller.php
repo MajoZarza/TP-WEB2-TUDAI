@@ -8,9 +8,10 @@ class ListController {
     private $model;
     private $view;
 
-    public function __construct() {
+    function __construct() {
         $this->model = new ListModel();
-        $this->view = new ListView();
+        $isAdmin = AuthHelper::isAdmin();
+        $this->view = new ListView($isAdmin);
     }
 
     public function showItems() {
