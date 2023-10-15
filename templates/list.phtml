@@ -1,0 +1,30 @@
+<?php require 'templates/header.phtml'; ?>
+
+<?php //var_dump(password_hash('admin', PASSWORD_BCRYPT)) ?>
+
+<main class="mainHome">
+    <ul class="listaItems">
+        <?php foreach ($items as $item) : 
+            $nombre = $item->nombre;
+            $imagen_url = $item->imagen;
+            $id = $item->id; 
+            $url = "modelo/" . $id;
+            $categoria = $item->id_categoria; ?>
+                <li>
+                    <h2><a href="<?= $url ?>"><?= $nombre ?></a></h2>
+                    <img class="fotoPc" src="<?= $imagen_url ?>"/>
+                    <?php switch($categoria) : 
+                        case '1': ?>
+                            <p class="categoriaItem"><?= 'Gama alta' ?></p> 
+                            <?php break; ?>
+                        <?php case '2': ?>
+                            <p class="categoriaItem"><?= 'Gama media' ?></p> 
+                            <?php break; ?>
+                        <?php case '3': ?>
+                            <p class="categoriaItem"><?= 'Gama de entrada' ?></p>
+                            <?php break; ?>
+                    <?php endswitch; ?>
+                </li> 
+        <?php endforeach ?>
+    </ul>
+</main>
