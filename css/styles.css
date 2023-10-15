@@ -89,7 +89,7 @@ p.categoriaItem {
 
 /* ---------------------SingleItems-------------------------- */
 
-.mainItem {
+.centeredMain {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -134,7 +134,7 @@ img.fotoPcGrande {
 
 
 /* ---------------------login-------------------------- */
-div.contenedorLogin {
+div.contenedorForm {
     height: 500px;
     width: 20%;
     background-color: #dbc0f3;
@@ -151,6 +151,6 @@ input {
     height: 30px;
 }
 
-div.contenedorLogin #login {
+div.contenedorForm form {
     width: 80%;
 }

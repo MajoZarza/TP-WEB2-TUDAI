@@ -8,8 +8,8 @@ class userModel {
     }
 
     public function getByUsername($username) {
-        $consulta = $this->db->prepare('SELECT * FROM usuario WHERE usuario = ?');
-        $consulta->execute([$username]);
-        return $consulta->fetch(PDO::FETCH_OBJ);
+        $query = $this->db->prepare('SELECT * FROM usuario WHERE usuario = ?');
+        $query->execute([$username]);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 }

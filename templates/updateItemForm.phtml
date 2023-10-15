@@ -1,0 +1,30 @@
+<?php require 'templates/header.phtml'; ?>
+
+    <main class="centeredMain">
+        <div class="contenedorForm">
+            <form id="itemForm" method="POST" action="agregar">
+                <label for="name"></label>
+                <input required type="text" name="name" placeholder="Nombre" value="<?= $name ?>"/>
+                <label for="cpu"></label>
+                <input required type="text" name="cpu" placeholder="Procesador" value="<?= $cpu ?>"/>
+                <label for="gpu"></label>
+                <input required type="text" name="gpu" placeholder="Tarjeta grafica" value="<?= $gpu ?>"/>
+                <label for="motherboard"></label>
+                <input required type="text" name="motherboard" placeholder="Placa base" value="<?= $motherboard ?>"/>
+                <label for="storage"></label>
+                <input required type="text" name="storage" placeholder="Almacenamiento" value="<?= $storage ?>"/>
+                <label for="ram"></label>
+                <input required type="number" name="ram" placeholder="Ram" value="<?= $ram ?>"/>
+                <label for="category"></label>
+                <input required type="number" name="category" placeholder="Category" value="<?= $category ?>"/>
+                <label for="img"></label>
+                <input required type="text" name="img" placeholder="Imagen url" value="<?= $image?>"/>
+                <button type="submit">Cargar datos</button>
+                <?php if ($error) : ?>
+                    <div class="errorAlert">
+                        <?= $error ?>
+                    </div>
+                <?php endif ?>
+            </form>
+        </div>
+    </main>

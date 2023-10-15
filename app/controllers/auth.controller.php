@@ -10,7 +10,8 @@ class authController {
 
     function __construct() {
         $this->model = new userModel();
-        $this->view = new authView();
+        $isAdmin = AuthHelper::isAdmin();
+        $this->view = new authView($isAdmin);
     }
 
     public function showLogin() {

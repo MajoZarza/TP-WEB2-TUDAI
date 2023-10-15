@@ -1,0 +1,16 @@
+<?php require './templates/header.phtml' ?>
+
+    <main class="centeredMain">
+        <div class="contenedorForm">
+            <form id="itemForm" method="GET" action="<?= $url ?>">
+                <label for="id"></label>
+                <input required type="number" name="id" placeholder="id"/>
+                <button type="submit">Enviar</button>
+                <?php if ($error) : ?>
+                    <div class="errorAlert">
+                        <?= $error ?>
+                    </div>
+                <?php endif ?>
+            </form>
+        </div>
+    </main>
