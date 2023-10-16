@@ -2,7 +2,7 @@
 
     <main class="centeredMain">
         <div class="contenedorForm">
-            <form id="itemForm" method="POST" action="agregar">
+            <form id="itemForm" method="POST" action="procesar_agregar">
                 <label for="name"></label>
                 <input  type="text" name="name" placeholder="Nombre"/>
                 <label for="cpu"></label>
@@ -15,7 +15,15 @@
                 <input  type="text" name="storage" placeholder="Almacenamiento"/>
                 <label for="ram"></label>
                 <input  type="number" name="ram" placeholder="Ram"/>
+                <label for="category">Categoria</label>
+
+                <select required name="category">
+                    <option value="1">Gama alta</option>
+                    <option value="2">Gama media</option>
+                    <option value="3">Gama de entrada</option>
+                </select>
                 <label for="img"></label>
+                
                 <input  type="text" name="img" placeholder="Imagen url"/>
                 <button type="submit">Cargar datos</button>
                 <?php if ($error) : ?>
@@ -26,3 +34,4 @@
             </form>
         </div>
     </main>
+</body>

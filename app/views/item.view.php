@@ -7,11 +7,12 @@ class itemView {
         $this->isAdmin = $isAdmin;
     }
     
-    public function showItem($item) {
+    public function showItem($item, $category) {
         require 'templates/singleItem.phtml';
     }
 
     public function showItems($items) {
+        //llama al template que muestra a modo de lista todos los items cargados en la db para que se muestren en el home.
         require 'templates/list.phtml';
     }
 
@@ -21,12 +22,19 @@ class itemView {
         require './templates/NewItemForm.phtml';
     }
 
-    public function showIdForm($error = null) {
-        $url = "select_id/editar";
-        require './templates/idForm.phtml';
+    public function showIdFormEdit($error = null) {
+        require './templates/idForm_editar.phtml';
     }
 
-    public function showUpdateItemForm($error, $name, $cpu, $gpu, $motherboard, $storage, $ram, $category, $image) {
+    public function showUpdateItemForm($error, $id, $name, $cpu, $gpu, $motherboard, $storage, $ram, $category, $image) {
         require './templates/updateItemForm.phtml';
+    }
+
+    public function showIdFormDelete($error = null) {
+        require './templates/idForm_eliminar.phtml';
+    }
+
+    public function showErrorPage() {
+        require'./templates/errorPage.phtml';
     }
 }

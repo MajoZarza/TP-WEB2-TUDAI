@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2023 a las 23:03:51
+-- Tiempo de generación: 15-10-2023 a las 23:15:11
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -88,7 +88,7 @@ INSERT INTO `pc` (`id`, `id_categoria`, `nombre`, `procesador`, `grafica`, `moth
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(25) NOT NULL,
-  `contraseña` varchar(25) NOT NULL
+  `contraseña` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `contraseña`) VALUES
-(1, 'webadmin', 'admin');
+(1, 'webadmin', '$2y$10$KkaHZK4W2REGF8TCUVDa9eh1HVfI56S8g5ADrAJbQ.DeNsqbr4hsa');
 
 --
 -- Índices para tablas volcadas

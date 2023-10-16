@@ -13,8 +13,8 @@
             <li><a href="home">Inicio</a></li>
             <?php if($this->isAdmin) : ?>
                 <li><a href="agregar">Agregar item</a></li>
-                <li><a href="select_id">Editar item</a></li>
-                <li><a href="select_id">Eliminar item</a></li>
+                <li><a href="select_id_editar">Editar item</a></li>
+                <li><a href="select_id_eliminar">Eliminar item</a></li>
                 <li><?= $_SESSION['username'];  ?></li>
             <?php else : ?>
                 <li><a href="login">Login</a></li>

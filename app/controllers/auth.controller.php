@@ -8,16 +8,19 @@ class authController {
     private $model;
     private $view;
 
+    
     function __construct() {
         $this->model = new userModel();
         $isAdmin = AuthHelper::isAdmin();
         $this->view = new authView($isAdmin);
     }
 
+
     public function showLogin() {
         //muestra el login de la pagina
         $this->view->showLogin();
     }
+
 
     public function auth() {
         //guarda los datos ingresado (o no) en variables. En caso de no haber ingresados todos los datos, mostrara el error al usuario
@@ -31,7 +34,7 @@ class authController {
 
         //compara y verifica que los datos del usuario coincidan (autenticar)
         $user = $this->model->getByUsername($username);
-        //var_dump($user);
+
         if ($user && password_verify($password, $user->contraseña)) {
             AuthHelper::login($user);
             header('Location: ' . BASE_URL);
