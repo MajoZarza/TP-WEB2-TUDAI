@@ -2,6 +2,7 @@
 
 require_once 'app/controllers/item.controller.php';
 require_once 'app/controllers/auth.controller.php';
+require_once 'app/controllers/category.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -82,6 +83,41 @@ switch($params[0]) {
         //Procesa los datos ingresados al form para eliminar items.
         $controller = new itemController();
         $controller->deleteItem();
+        break;
+
+    case 'logout':
+        $controller = new authController();
+        $controller->logout();
+        break;
+    
+    
+    case 'category':
+        $categoryController->showCategories();
+        break;
+    case 'detailCategory':
+        $id = $params[1];
+        $categoryController->showItemsOfCategory($id);
+        break;
+    
+    case 'addCategory':
+        $categoryController->showCategoriesAdmin();
+        if((isset($_POST)) && (!empty($_POST))){
+            $categoryController->addCategory();//agrego una categoria
+            break;
+        }
+        break;
+    case 'showFormEditCategory':
+        $id = $params[1];
+        $categoryController->showFormEditCategory($id);
+        break;
+    
+    case 'editCategory':
+        $categoryController->updateCategory();
+        break;
+    
+    case 'deleteCategory':
+        $id = $params[1];
+        $categoryController->deleteCategory($id);
         break;
 
     default: 
