@@ -2,7 +2,7 @@
 
 require_once './app/models/category.model.php';
 require_once './app/views/category.view.php';
-//require_once './app/models/item.controller.php';
+require_once './app/models/item.controller.php';
 
 class CategoryController{
 

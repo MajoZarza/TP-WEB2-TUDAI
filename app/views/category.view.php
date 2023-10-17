@@ -3,22 +3,20 @@
 
 class CategoryView{
 
+    private $isAdmin;
+
+    public function __construct($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+        
+    }
     public function showCategories($categories){
         
-        $count = count($categories);
-
-        require 'templates/categoriesList.phtml';
-
-
+        require 'templates/category.phtml';
 
     }
 
-    public function showError($error){
-
-        require 'templates/error.phtml';
-    }    
-
-
+   
 
 
 

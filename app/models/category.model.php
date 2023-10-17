@@ -11,10 +11,12 @@ class CategoryModel{
     }
 
     public function getAllCategories(){
-
+        //abro la coneccion a la db(en el constructor)
+        //escribo la sentencia sql y luego la ejecuto
         $query = $this->db->prepare("SELECT * FROM categorias");
         $query->execute();
 
+        //con fechtAll traigo los resultados en un arreglo
         $categories = $query->fetchAll(PDO::FETCH_OBJ); 
 
         return $categories;
