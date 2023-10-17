@@ -64,6 +64,7 @@ class itemController {
 
         if (empty($name) || empty($cpu) || empty($gpu) || empty($motherboard) || empty($storage) || empty($ram) || empty($category) || empty($image)) {
             $this->view->showNewItemForm("Revise que todos los campos tengan datos correctos y no esten vacios");
+            return;
         }
 
         $this->model->newItem($name, $cpu, $gpu, $motherboard, $storage, $ram, $category, $image);
