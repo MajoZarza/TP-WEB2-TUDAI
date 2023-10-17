@@ -1,0 +1,26 @@
+<?php require 'templates/header.phtml'; ?>
+
+    <main>
+
+        <h1>Lista de categorias:</h1>
+        <div class="tabla-categorias">
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+                <?php foreach ($categories as $category) :
+                    $id = $category->id;
+                    $name = $category->gama;
+                    $descripcion = $category->descripcion;
+                    $orden_precio = $category->orden_precio; ?>
+
+                
+                <td><a href='' type='button' class="btn">Ver productos</a></td>
+                </tr>
+
+                <?php endforeach ?>
+        </table>
+    </div>
+</main>

@@ -1,0 +1,13 @@
+<?php require './templates/header.phtml' ?>
+
+    <main class="editCategory">
+        <div class="contenedorForm">
+            <form action="editCategory" method="POST">
+                <label for="">Editar categoria</label>
+                <input required type="text" name="categoriaNueva" value="$category->categpriaNueva"/>
+                <button type="submit">Editar</button>
+                
+            </form>
+        </div>
+    </main>
+</body>

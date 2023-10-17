@@ -2,13 +2,13 @@
 
 require_once './app/models/category.model.php';
 require_once './app/views/category.view.php';
-require_once './app/models/item.controller.php';
+//require_once './app/models/item.controller.php';
 
 class CategoryController{
 
-    private $model;
+/*    private $model;
     private $view;
-    private $id;//id item seria
+    private $id;
 
 
     function __construct(){
@@ -59,24 +59,24 @@ class CategoryController{
 
     }
 
-    function uodateCategory(){
+    function updateCategory(){
 
         $authHelper = new AuthHelper();
         $authHelper->init();
 
         if(!empty($_POST)){
             $id = $_POST['id'];
-            $categoriaNueva = $_POST[categoriaNueva, $id];
+           // $categoriaNueva = $_POST[$categoriaNueva, $id];
         
         }
 
-    }
-
-
-
-
-
+    }*/
 }
+
+
+
+
+
 
 
 
